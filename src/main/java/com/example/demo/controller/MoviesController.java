@@ -1,6 +1,8 @@
 package com.example.demo.controller;
 
+import com.example.demo.model.JSONModel;
 import com.example.demo.model.MoviesModel;
+import com.example.demo.model.WinnerModel;
 import com.example.demo.repository.MoviesRepository;
 import com.example.demo.service.MoviesService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -42,9 +44,36 @@ public class MoviesController {
 
     @GetMapping(path = "/movies")
     public ResponseEntity consultar() {
-       List<Map<String, Object>> producesMore = repository.findProducersMoreWinners();
+        List<WinnerModel> listMore = new ArrayList<WinnerModel>();
+        List<WinnerModel> listLess = new ArrayList<WinnerModel>();
+        JSONModel mm = new JSONModel();
 
-        return ResponseEntity.status(HttpStatus.OK).body(producesMore);
+        List<String> producesMore = repository.findProducersMoreWinners();
+        for(int i = 0; i <= producesMore.size() -1; ++i) {
+             String [] producers = producesMore.get(i).split(",");
+             WinnerModel wm = new WinnerModel();
+             wm.setProducer(producers[0]);
+             wm.setPreviouswin(producers[1]);
+             wm.setFollowingwin(producers[2]);
+             wm.setInterval(producers[3]);
+            listMore.add(wm);
+        }
+
+        mm.setMax(listMore);
+
+        List<String> producesLess = repository.findProducersLessWinners();
+        for(int i = 0; i <= producesLess.size() -1; ++i) {
+            String [] producers = producesLess.get(i).split(",");
+            WinnerModel wm = new WinnerModel();
+            wm.setProducer(producers[0]);
+            wm.setPreviouswin(producers[1]);
+            wm.setFollowingwin(producers[2]);
+            wm.setInterval(producers[3]);
+            listLess.add(wm);
+        }
+        mm.setMin(listLess);
+
+        return ResponseEntity.status(HttpStatus.OK).body(mm);
     }
 
     @PostMapping(path = "/movies/save")

@@ -18,7 +18,7 @@ public interface MoviesRepository extends CrudRepository<MoviesModel, Integer> {
             "where winner = 'yes' \n" +
             "group by producer\n" +
             "having intervalo = select  (max(year) - min(year)) from movies where winner = 'yes' group by producer order by 1 desc limit 1", nativeQuery = true)
-    public List<Map<String, Object>> findProducersMoreWinners();
+    public List<String> findProducersMoreWinners();
 
     @Query(value = "select  producer, \n" +
             "min(year) previousWin, \n" +
@@ -28,5 +28,5 @@ public interface MoviesRepository extends CrudRepository<MoviesModel, Integer> {
             "where winner = 'yes' \n" +
             "group by producer\n" +
             "having intervalo = select (max(year) - min(year)) media from movies where winner = 'yes' group by producer having media > 0 order by 1 asc limit 1", nativeQuery = true)
-    public List<Map<String, Object>> findProducersLessWinners();
+    public List<String> findProducersLessWinners();
 }
