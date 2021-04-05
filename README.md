@@ -24,3 +24,33 @@ OBS: a coluna winner foi alterado no CSV para as celulas em branco inserido o va
 - Os testes estão nos arquivos MoviesApplicationTest e MoviesTest.
 - Recomendo executar somente o arquivo MoviesTest para executar os testes todos corretamente.
 - Motivo disso que não consegui usar o @Order para dar uma sequência correta aos testes.
+
+## Rotas
+POST http://localhost:8080/movies/load import o arquivo CSV no banco.
+GET http://localhost:8080/movies/api -> gera o JSON final que é solicitado no desafio max {} e o min {} dos vencedires.
+POST http://localhost:8080/movies/save -> faz a inclusão de um filme e passa o objeto completo do filme no corpo da requisição.
+{
+  "year": 1980,
+  "title": "Stop the Music",
+  "producer": "Allan Carr",
+  "winner": "yes",
+  "studios": "Associated Film Distribution"
+}
+
+GET http://localhost:8080/movies/{id} ->  recupera um filme
+
+DELETE http://localhost:8080/movies/{id} -> delete um filme
+
+PUT http://localhost:8080/movies/ atualizada um filme passando no corpo da requisição todas as info necessárias
+{
+  "id": 1,
+  "year": 1980,
+  "title": "Stop the Music",
+  "producer": "Allan Carr",
+  "winner": "yes",
+  "studios": "Associated Film Distribution"
+}
+
+
+
+
