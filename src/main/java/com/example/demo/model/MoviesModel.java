@@ -11,6 +11,17 @@ public class MoviesModel {
     @Id @GeneratedValue
     private Integer id;
 
+    public MoviesModel(Integer id, Integer year, String title, String producer, String winner, String studios) {
+        this.id = id;
+        this.year = year;
+        this.title = title;
+        this.producer = producer;
+        this.winner = winner;
+        this.studios = studios;
+    }
+
+    public MoviesModel() { }
+
     @Column(nullable = false, length = 4 )
     private Integer year;
 

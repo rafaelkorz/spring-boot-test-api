@@ -6,14 +6,13 @@ import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
-import java.util.Map;
 
 @Repository
 public interface MoviesRepository extends CrudRepository<MoviesModel, Integer> {
     @Query(value = "select  producer, \n" +
+            "(max(year) - min(year)) intervalo,\n" +
             "min(year) previousWin, \n" +
-            "max(year) FollowingWin, \n" +
-            "(max(year) - min(year)) intervalo\n" +
+            "max(year) FollowingWin \n" +
             "from movies \n" +
             "where winner = 'yes' \n" +
             "group by producer\n" +
@@ -21,9 +20,9 @@ public interface MoviesRepository extends CrudRepository<MoviesModel, Integer> {
     public List<String> findProducersMoreWinners();
 
     @Query(value = "select  producer, \n" +
+            "(max(year) - min(year)) intervalo, \n" +
             "min(year) previousWin, \n" +
-            "max(year) FollowingWin, \n" +
-            "(max(year) - min(year)) intervalo\n" +
+            "max(year) FollowingWin \n" +
             "from movies \n" +
             "where winner = 'yes' \n" +
             "group by producer\n" +

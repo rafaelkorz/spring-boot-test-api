@@ -5,29 +5,20 @@ import com.example.demo.repository.MoviesRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
-import javax.persistence.Query;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.List;
-import java.util.Map;
 
 @Service
 public class MoviesService {
-
-    private static EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("movies-pers");
 
     @Autowired
     private MoviesRepository repository;
 
     String line = "";
-    Integer HighWinner = 0;
     public void saveMoviesData() {
         try {
-            BufferedReader br = new BufferedReader(new FileReader("Novelist.csv"));
+            BufferedReader br = new BufferedReader(new FileReader("movieslist.csv"));
             while ((line = br.readLine())!= null) {
                 String [] data = line.split(";");
                 String [] producer = data[3].split("and ");
