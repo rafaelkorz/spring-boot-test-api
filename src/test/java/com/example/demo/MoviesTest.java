@@ -11,7 +11,7 @@ import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 
-public class MoviesTest extends DemoApplicationTest {
+public class MoviesTest extends MoviesApplicationTest {
 
     @Test
     public void importFileCSV() throws Exception {
