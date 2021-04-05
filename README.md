@@ -5,7 +5,7 @@ Realize o clone do projeto
 
 ```bash
 git clone https://github.com/rafaelkorz/spring-boot-test-api.git
-```
+
 
 Abra o projeto em uma IDE de sua preferência.
 
@@ -29,6 +29,7 @@ OBS: a coluna winner foi alterado no CSV para as celulas em branco inserido o va
 POST http://localhost:8080/movies/load import o arquivo CSV no banco.
 GET http://localhost:8080/movies/api -> gera o JSON final que é solicitado no desafio max {} e o min {} dos vencedires.
 POST http://localhost:8080/movies/save -> faz a inclusão de um filme e passa o objeto completo do filme no corpo da requisição.
+```bash
 {
   "year": 1980,
   "title": "Stop the Music",
@@ -36,12 +37,14 @@ POST http://localhost:8080/movies/save -> faz a inclusão de um filme e passa o 
   "winner": "yes",
   "studios": "Associated Film Distribution"
 }
+```
 
 GET http://localhost:8080/movies/{id} ->  recupera um filme
 
 DELETE http://localhost:8080/movies/{id} -> delete um filme
 
 PUT http://localhost:8080/movies/ atualizada um filme passando no corpo da requisição todas as info necessárias
+```bash
 {
   "id": 1,
   "year": 1980,
@@ -50,6 +53,7 @@ PUT http://localhost:8080/movies/ atualizada um filme passando no corpo da requi
   "winner": "yes",
   "studios": "Associated Film Distribution"
 }
+```
 
 
 
