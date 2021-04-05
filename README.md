@@ -28,7 +28,7 @@ OBS: a coluna winner foi alterado no CSV para as celulas em branco inserido o va
 ## Rotas
 
 - POST http://localhost:8080/movies/load import o arquivo CSV no banco.
-- GET http://localhost:8080/movies/api -> gera o JSON final que é solicitado no desafio max {} e o min {} dos vencedires.
+- GET  **http://localhost:8080/movies/api -> gera o JSON final que é solicitado no desafio.**
 - POST http://localhost:8080/movies/save -> faz a inclusão de um filme e passa o objeto completo do filme no corpo da requisição.
 ```bash
 {
