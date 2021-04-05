@@ -1,6 +1,6 @@
-package com.example.demo.repository;
+package com.example.movies.repository;
 
-import com.example.demo.model.MoviesModel;
+import com.example.movies.model.MoviesModel;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;

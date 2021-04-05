@@ -1,6 +1,6 @@
-package com.example.demo;
+package com.example.movies;
 
-import com.example.demo.model.MoviesModel;
+import com.example.movies.model.MoviesModel;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import org.junit.Test;

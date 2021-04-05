@@ -1,6 +1,6 @@
-package com.example.demo;
+package com.example.movies;
 
-import com.example.demo.controller.MoviesController;
+import com.example.movies.controller.MoviesController;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.jupiter.api.*;

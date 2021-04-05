@@ -1,4 +1,4 @@
-package com.example.demo.model;
+package com.example.movies.model;
 
 public class WinnerModel {
 

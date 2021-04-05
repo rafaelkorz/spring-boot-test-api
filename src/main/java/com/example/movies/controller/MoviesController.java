@@ -1,13 +1,12 @@
-package com.example.demo.controller;
+package com.example.movies.controller;
 
-import com.example.demo.model.JSONModel;
-import com.example.demo.model.MoviesModel;
-import com.example.demo.model.WinnerModel;
-import com.example.demo.repository.MoviesRepository;
-import com.example.demo.service.MoviesService;
+import com.example.movies.model.JSONModel;
+import com.example.movies.model.MoviesModel;
+import com.example.movies.model.WinnerModel;
+import com.example.movies.repository.MoviesRepository;
+import com.example.movies.service.MoviesService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.RequestEntity;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
