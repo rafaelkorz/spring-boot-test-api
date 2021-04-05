@@ -26,9 +26,10 @@ OBS: a coluna winner foi alterado no CSV para as celulas em branco inserido o va
 - Motivo disso que não consegui usar o @Order para dar uma sequência correta aos testes.
 
 ## Rotas
-POST http://localhost:8080/movies/load import o arquivo CSV no banco.
-GET http://localhost:8080/movies/api -> gera o JSON final que é solicitado no desafio max {} e o min {} dos vencedires.
-POST http://localhost:8080/movies/save -> faz a inclusão de um filme e passa o objeto completo do filme no corpo da requisição.
+
+- POST http://localhost:8080/movies/load import o arquivo CSV no banco.
+- GET http://localhost:8080/movies/api -> gera o JSON final que é solicitado no desafio max {} e o min {} dos vencedires.
+- POST http://localhost:8080/movies/save -> faz a inclusão de um filme e passa o objeto completo do filme no corpo da requisição.
 ```bash
 {
   "year": 1980,
@@ -39,11 +40,11 @@ POST http://localhost:8080/movies/save -> faz a inclusão de um filme e passa o 
 }
 ```
 
-GET http://localhost:8080/movies/{id} ->  recupera um filme
+- GET http://localhost:8080/movies/{id} ->  recupera um filme
 
-DELETE http://localhost:8080/movies/{id} -> delete um filme
+- DELETE http://localhost:8080/movies/{id} -> delete um filme
 
-PUT http://localhost:8080/movies/ atualizada um filme passando no corpo da requisição todas as info necessárias
+- PUT http://localhost:8080/movies/ atualizada um filme passando no corpo da requisição todas as info necessárias
 ```bash
 {
   "id": 1,
