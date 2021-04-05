@@ -9,6 +9,8 @@ git clone https://github.com/rafaelkorz/spring-boot-test-api.git
 
 Abra o projeto em uma IDE de sua preferência.
 
+## Aplicação
+
 - Execute as intalações de dependência do Maven.
 - Execute o arquivo MoviesApplication.
 - Para carregar o arquivo CSV utilize a rota http://localhost:8080/movies/load.
